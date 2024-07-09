@@ -13,6 +13,6 @@ document.getElementById('registerForm').addEventListener('submit', function(even
         return;
     }
 
-    responseMessage.textContent = `Successfully registered with complete`;
+    responseMessage.textContent = `Successfully registered with completes`;
     responseMessage.style.color = 'green';
 });
