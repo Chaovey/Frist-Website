@@ -6,15 +6,19 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     const responseMessage = document.getElementById('responseMessage');
 
     responseMessage.textContent = '';
-
-    if (password !== confirmPassword) {
-        responseMessage.textContent = 'Passwords do not match!';
-        responseMessage.style.color = 'red';
+    if(phone!=""||password!=""||confirmPassword!=""){
+        if (password !== confirmPassword) {
+            responseMessage.textContent = 'Passwords do not match!';
+            responseMessage.style.color = 'red';
+            return;
+        }
+    
+        responseMessage.textContent = `Successfully registered with completes`;
+        responseMessage.style.color = 'white';
         return;
     }
-
-    responseMessage.textContent = `Successfully registered with completes`;
-    responseMessage.style.color = 'green';
+    responseMessage.textContent = 'Please Input Phone and Password';
+    responseMessage.style.color = 'red';
 });
 const translations = {
     en: {
@@ -56,6 +60,30 @@ const translations = {
         passwordLabel: "Senha",
         confirmPasswordLabel: "Confirmar senha",
         submitButton: "Registrar e Entrar"
+    },
+    es: {
+        signInText: "Iniciar sesión",
+        registerTitle: "Registrar",
+        phoneLabel: "Número de teléfono",
+        passwordLabel: "Contraseña",
+        confirmPasswordLabel: "Confirmar contraseña",
+        submitButton: "Registrar e Iniciar sesión"
+    },
+    bn: {
+        signInText: "সাইন ইন",
+        registerTitle: "নিবন্ধন করুন",
+        phoneLabel: "ফোন নম্বর",
+        passwordLabel: "পাসওয়ার্ড",
+        confirmPasswordLabel: "পাসওয়ার্ড নিশ্চিত করুন",
+        submitButton: "নিবন্ধন করুন এবং সাইন ইন করুন"
+    },
+    zh: {
+        signInText: "登录",
+        registerTitle: "注册",
+        phoneLabel: "电话号码",
+        passwordLabel: "密码",
+        confirmPasswordLabel: "确认密码",
+        submitButton: "注册并登录"
     }
 };
 
